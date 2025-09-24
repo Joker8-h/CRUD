@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NavBar from "./NavBar";
 
 
  function EnemigoPost() {
@@ -20,19 +21,37 @@ import React, { useState } from "react";
 
 
 
-    return (
-       
-         <div>
-        <h1 className="titulo">Agregar Enemigo</h1>
-        <form onSubmit={GuardarEnemigo} className="formulario">
-            <input type="text" placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
-            <input type="text" placeholder="Tipo" value={tipo} onChange={(e) => setTipo(e.target.value)} />
-            <input type="number" placeholder="Vida" value={vida} onChange={(e) => setVida(e.target.value)} />
-            <input type="number" placeholder="Ataque" value={ataque} onChange={(e) => setAtaque(e.target.value)} />
-            <button type="submit">Agregar Enemigo</button>
-        </form>
-         </div>
-    
+   return (
+        <div className="content-container">
+            <NavBar></NavBar>
+            <h1>Crear Nuevo Enemigo</h1>
+            <form className="styled-form" onSubmit={GuardarEnemigo}>
+                
+                <div className="form-group">
+                    <label htmlFor="nombre">Nombre</label>
+                    <input id="nombre" type="text" placeholder="Nombre del enemigo" value={nombre} onChange={(e) => setNombre(e.target.value)} required/>
+                </div>
+                
+                <div className="form-group">
+                    <label htmlFor="tipo">Tipo</label>
+                    <input id="tipo" type="text" placeholder="Tipo (ej: Fuego, Agua)" value={tipo} onChange={(e) => setTipo(e.target.value)} required/>
+                </div>
+                
+                <div className="form-group">
+                    <label htmlFor="vida">Vida</label>
+                    <input id="vida" type="number" placeholder="Puntos de vida" value={vida} onChange={(e) => setVida(e.target.value)} required/>
+                </div>
+                
+                <div className="form-group">
+                    <label htmlFor="ataque">Ataque</label>
+                    <input id="ataque" type="number" placeholder="Puntos de ataque" value={ataque} onChange={(e) => setAtaque(e.target.value)} required/>
+                </div>
+
+                <div className="form-actions">
+                    <button type="submit">Guardar Enemigo</button>
+                </div>
+            </form>
+        </div>
     );
 
 }

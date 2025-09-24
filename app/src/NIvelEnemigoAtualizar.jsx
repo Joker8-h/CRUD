@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import NavBar from "./NavBar";
 function ActualizarNivelEnemigo() {
 const {id} = useParams();
     
@@ -29,6 +30,7 @@ const {id} = useParams();
     }
     return (
         <div>
+            <NavBar></NavBar>
             <h2>
                 ACTUALIZAR NIVEL
             </h2>

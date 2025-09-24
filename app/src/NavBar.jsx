@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
+import './App.css'; // Asegúrate de importar tu CSS
 
 function NavBar() {
     return (
-        <nav>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/enemigo">Enemigo</Link></li>
-                <li><Link to="/crear-enemigo">crear enemigo</Link></li>
-                <li><Link to="/nivel">mirar niveles</Link></li>
-                <li><Link to="/crear-nivel">crear nivel</Link></li>
-                <li><Link to="/nivel-enemigo">nivel enemigo</Link></li>
-                <li><Link to="/crear-nivel-enemigo">crear nivel enemigo</Link></li>
-
+        <nav className="navbar-custom">
+            <ul className="nav-list">
+                <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
+                <li className="nav-item"><Link to="/enemigo" className="nav-link">Enemigo</Link></li>
+                <li className="nav-item"><Link to="/crear-enemigo" className="nav-link">crear enemigo</Link></li>
+                <li className="nav-item"><Link to="/nivel" className="nav-link">mirar niveles</Link></li>
+                <li className="nav-item"><Link to="/crear-nivel" className="nav-link">crear nivel</Link></li>
+                <li className="nav-item"><Link to="/nivel-enemigo" className="nav-link">nivel enemigo</Link></li>
+                <li className="nav-item"><Link to="/crear-nivel-enemigo" className="nav-link">crear nivel enemigo</Link></li>
             </ul>
         </nav>
     );

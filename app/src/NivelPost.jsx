@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NavBar from "./NavBar";
 
 
  function NivelPost() {
@@ -22,6 +23,7 @@ import React, { useState } from "react";
     return (
        
          <div>
+            <NavBar></NavBar>
         <h1 className="titulo">Agregar Nivel</h1>
         <form onSubmit={GuardarNivel} className="formulario">
             <input type="text" placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />

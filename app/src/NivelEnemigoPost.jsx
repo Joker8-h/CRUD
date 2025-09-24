@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NavBar from "./NavBar";
 
 
  function NivelEnemigoPost() {
@@ -23,6 +24,7 @@ import React, { useState } from "react";
     return (
        
          <div>
+            <NavBar></NavBar>
         <h1 className="titulo">Agregar Enemigo</h1>
         <form onSubmit={GuardarEnemigo} className="formulario">
             <input type="text" placeholder="id-nivel" value={id_nivel} onChange={(e) => setId_nivel(e.target.value)} />

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate} from "react-router-dom";
+import NavBar from "./NavBar";
 
 
 function EnemigoGet() {
@@ -43,10 +44,12 @@ function EnemigoGet() {
 
     };
 
+  
     return (
-        <div>
-            <h1>Tabla</h1>
-            <table>
+        <div className="content-container"> 
+            <NavBar></NavBar>
+            <h1>Tabla de Enemigos</h1>
+            <table className="styled-table">
                 <thead>
                     <tr>
                         <th>id</th>
@@ -54,6 +57,7 @@ function EnemigoGet() {
                         <th>tipo</th>
                         <th>vida</th>
                         <th>ataque</th>
+                        <th>Acciones</th> 
                     </tr>
                 </thead>
                 <tbody>
@@ -65,8 +69,10 @@ function EnemigoGet() {
                             <td>{enemi.vida}</td>
                             <td>{enemi.ataque}</td>
                             <td>
-                                <button onClick={() => actualizarEne(enemi.id_enemigo)}>actualizar</button>
-                                <button onClick={() => eliminarEnemigo(enemi.id_enemigo)}>eliminar</button>
+                                <div className="table-actions"> 
+                                    <button onClick={() => actualizarEne(enemi.id_enemigo)}>Actualizar</button>
+                                    <button className="btn-eliminar" onClick={() => eliminarEnemigo(enemi.id_enemigo)}>Eliminar</button>
+                                </div>
                             </td>
                         </tr>
                     ))}
@@ -75,5 +81,7 @@ function EnemigoGet() {
         </div>
     );
 }
+
+
 
 export default EnemigoGet;

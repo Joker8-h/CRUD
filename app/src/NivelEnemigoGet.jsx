@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate} from "react-router-dom";
+import NavBar from "./NavBar";
 
 
 function NivelEnemigoGet() {
@@ -45,6 +46,7 @@ function NivelEnemigoGet() {
 
     return (
         <div>
+            <NavBar></NavBar>
             <h1>Tabla</h1>
             <table>
                 <thead>
